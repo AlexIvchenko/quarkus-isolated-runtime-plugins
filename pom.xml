@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>quarkus-isolated-runtime-plugins</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <compiler-plugin.version>3.10.1</compiler-plugin.version>
+        <maven.compiler.release>11</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+        <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+        <quarkus.platform.version>2.16.6.Final</quarkus.platform.version>
+        <skipITs>true</skipITs>
+        <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>${quarkus.platform.artifact-id}</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>app</module>
+        <module>api</module>
+        <module>lib-v1</module>
+        <module>lib-v2</module>
+        <module>plugin1</module>
+        <module>plugin2</module>
+        <module>lib-v3</module>
+    </modules>
+</project>

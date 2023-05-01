@@ -1,0 +1,31 @@
+@startuml
+
+package SystemClassLoader {
+    component API
+}
+
+package RunnerClassLoader {
+    component App
+    component LibV3
+    component Quarkus
+}
+
+package Plugin1ClassLoader {
+    component Plugin1
+    component LibV1
+}
+
+package Plugin2ClassLoader {
+    component Plugin2
+    component LibV2
+}
+
+API -(0- App
+API -(0- Plugin1
+API -(0- Plugin2
+App -down-> LibV3
+Plugin1 -down-> LibV1
+Plugin2 -down-> LibV2
+
+
+@enduml

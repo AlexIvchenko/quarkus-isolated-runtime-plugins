@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: app
+    build:
+      dockerfile: ./app/src/main/docker/Dockerfile
+      context: ./
+    volumes:
+    - ./plugin1/target/plugin1-1.0-SNAPSHOT.jar:/deployments/plugins/plugin1/plugin1-1.0-SNAPSHOT.jar
+    - ./plugin1/target/lib/:/deployments/plugins/plugin1/lib/
+    - ./plugin2/target/plugin2-1.0-SNAPSHOT.jar:/deployments/plugins/plugin2/plugin2-1.0-SNAPSHOT.jar
+    - ./plugin2/target/lib:/deployments/plugins/plugin2/lib/
